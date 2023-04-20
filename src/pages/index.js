@@ -6,7 +6,9 @@ let socket
 export default function Home() {
   const [input, setInput] = useState('')
 
-  useEffect(() => socketInitializer(), [])
+  useEffect(() => {
+    socketInitializer()
+  }, [])
 
   const socketInitializer = async () => {
     await fetch('/api/socket')
